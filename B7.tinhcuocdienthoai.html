@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <font>Nhap so phut da goi:</font>
+    <input id="sophut" type="number">  Phut</input><br><br>
+    <font> Phí thuê bao bắt buộc là 30000 D.</font><br><br>
+     <font>1000 đồng cho mỗi gọi của 50 phút đầu tiên.</font><br><br>
+    <font>500 đồng cho mỗi phút gọi của 150 phút tiếp theo.</font><br><br>
+    <font>200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.</font><br><br>
+    <input type="button" value="onclick" onclick="tinh()"><br><br>
+
+    <script>
+        function tinh() {
+            let sp=parseInt(document.getElementById('sophut').value)
+            let phicodinh=30000;
+            if (sp>200){
+                phi=(sp-200)*200+150*500+50*1000
+                tong=phi + phicodinh;
+                document.getElementById("rs").innerHTML="phi phai tra:  " + tong+" VND"
+            }else if (sp>50){
+                phi=(sp-50)*500+50*1000;
+                tong=phi+phicodinh;
+                document.getElementById("rs").innerHTML="Phi phai tra:  " + tong+" VND"
+            } else {
+                phi=sp*1000;
+                tong=phicodinh+phi;
+                document.getElementById("rs").innerHTML="Phi phai tra:  " + tong+" VND"
+            }
+        }
+    </script>
+    <font id="rs">
+</form>
+
+</body>
+</html>

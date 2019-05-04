@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <font>Nhap doanh so ban hang</font>
+    <input type="number" id="doanhso">  Trieu(VND)</input><br><br>
+    <input type="button" value="onclick" onclick="ketqua()"/><br><br>
+    <font>Muc 1: doanh so <= 100tr nhan 5% hoa hong </font><br><br>
+    <font>Muc 2: 100tr < doanh so <=300tr nhan 10% hoa hong </font><br><br>
+    <font>Muc 3: doanh so > 300tr nhan 20% hoa hong </font><br><br>
+
+    <script>
+        function ketqua() {
+            let ds=parseInt(document.getElementById("doanhso").value);
+            if (ds<=100) {
+                hh=(ds*5)/100
+                document.getElementById("rs").innerHTML= "hoa hong =  " + hh +" trieu"
+            }else if (ds<=300){
+                hh=(ds*10)/100;
+                document.getElementById("rs").innerHTML= "hoa hong =  " + hh + " trieu"
+            } else if(ds>300){
+                hh=(ds*20)/100;
+                document.getElementById("rs").innerHTML= "hoa hong =  " + hh + " trieu"
+            }
+        }
+    </script>
+    <font>KET QUA</font><br><br>
+    <font id="rs"></font>
+</form>
+</body>
+</html>

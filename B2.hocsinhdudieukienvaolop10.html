@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Nhap so tuoi:
+    <input type="number" id="tt"/>
+    <input type="button" value="onclick" onclick="nhap()">
+    <script>
+        function nhap() {
+            let a=parseInt(document.getElementById("tt").value)
+            if (a>=15) {
+                document.getElementById("rs").innerHTML="du dieu kien vao lop 10"
+            }else {
+                document.getElementById("rs").innerHTML="khong du dieu kien vao lop 10"
+            }
+        }
+    </script>
+    <br><br><br>
+    <font>Ket qua</font>
+    <font><P id="rs"></P></font>
+</form>
+
+</body>
+</html>
